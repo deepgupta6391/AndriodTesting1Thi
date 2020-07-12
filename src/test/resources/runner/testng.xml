@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+	<listeners>
+		<listener class-name="extentlisteners.ExtentListener"></listener>
+	</listeners>
+
+	<test thread-count="5" name="FlipboardLoginTest">
+		<classes>
+			<class name="testcases.FlipboardLoginTest" />
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Title Section Test">
+		<classes>
+			<class name="testcases.TitleSectionTest" />
+		</classes>
+	</test>
+
+
+</suite> <!-- Suite -->
