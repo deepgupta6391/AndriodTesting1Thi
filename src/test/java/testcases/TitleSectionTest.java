@@ -1,5 +1,6 @@
 package testcases;
 
+import java.util.Hashtable;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
@@ -19,6 +20,10 @@ import screens.CreateAccountScreen;
 import screens.HomeScreen;
 import screens.LoginScreen;
 import utilities.CommonUtils;
+import utilities.Constants;
+import utilities.DataProviders;
+import utilities.DataUtil;
+import utilities.ExcelReader;
 import utilities.ScrollUtil;
 
 public class TitleSectionTest extends TestBase {
@@ -38,14 +43,19 @@ public class TitleSectionTest extends TestBase {
 		home = new HomeScreen(driver);
 	}
 
-	@Test
-	public void validateTitle() {
+	@Test(dataProviderClass = DataProviders.class,dataProvider = "flipBoard")
+	public void validateTitle(Hashtable<String, String> data) {
+		
+		ExcelReader excel=new ExcelReader(Constants.SUITE1_XL_PATH);
+		DataUtil.checkExecution("FlipBoardSuite", "validateTitle", data.get("Runmode"), excel);
+		
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		login.clickGetStartedBtn().chooseOptions(5).clickContinue().skipCreateAccountScreen();
 
 		try {

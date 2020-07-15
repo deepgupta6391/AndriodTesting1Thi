@@ -18,5 +18,12 @@
 		</classes>
 	</test>
 
+	<test thread-count="5" name="Search Item Test">
+		<classes>
+			<class name="testcases.SearchItemTest" />
+		</classes>
+	</test>
+
+
 
 </suite> <!-- Suite -->

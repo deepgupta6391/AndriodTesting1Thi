@@ -22,7 +22,7 @@ public class HomeScreen extends ScreenBase{
 			})
 	public List<AndroidElement> title;
 	
-	@AndroidFindBy(id="flipboard.app:id/sliding_title_text_view")
+	@AndroidFindBy(id="flipboard.app:id/bottom_nav_view_icon")
 	public List<AndroidElement> bottomNavigation;
 
 	public HomeScreen(AppiumDriver<MobileElement> driver) {
@@ -39,6 +39,7 @@ public class HomeScreen extends ScreenBase{
 	public void selectBottomPanel(int screenNo)
 	{
 		bottomNavigation.get(screenNo-1).click();
+		
 	}
 
 }
